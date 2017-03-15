@@ -1,5 +1,5 @@
 // Client ID and API key from the Developer Console
-var CLIENT_ID = '<YOUR CLIENT KEY HERE>';
+var CLIENT_ID;  // = <YOUR CLIENT KEY HERE>; //also remove line no. 20.
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
@@ -17,6 +17,8 @@ var buttons = $("#hide");
  *  On load, called to load the auth2 library and API client library.
  */
 function handleClientLoad() {
+    //load Client Key from external File ** remove next line, if u have key and assign key to CLIENT_ID
+    readTextFile('./ClientKey.txt');
     gapi.load('client:auth2', initClient);
 }
 
@@ -243,4 +245,15 @@ function listFiles() {
             appendPre('No files found.');
         }
     });
+}
+
+function readTextFile(file)
+{
+    var client = new XMLHttpRequest();
+    client.open('GET', file);
+    client.onreadystatechange = function() {
+        console.log(client.responseText);
+        CLIENT_ID = client.responseText;
+    }
+    client.send();
 }
