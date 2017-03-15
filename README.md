@@ -10,4 +10,8 @@ Implemented Google drive rest API with the functionality of-
 
 This project has been made using Javascript, JQUERY and BOOTSTRAP...
 
-Generate your Google client key [here](https://developers.google.com/drive/v3/web/quickstart/js).
+Generate your Google client key [here](https://developers.google.com/drive/v3/web/quickstart/js#step_1_turn_on_the_api_name). Just add the client key in js/main-script.js and comment line #20. 
+
+See the prerequisites [here](https://developers.google.com/drive/v3/web/quickstart/js#prerequisites).
+
+See how to run [here](https://developers.google.com/drive/v3/web/quickstart/js#step_3_run_the_sample).
